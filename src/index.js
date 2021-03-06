@@ -22,12 +22,12 @@ const init = () => {
 
         //setting up our fetch
 
-        fetch('http://localhost:3000/movies')
+        //fetch('http://localhost:3000/movies')
 //Sometimes we only want to fetch one single resources from our server. If we know the id we can pass add it to the end of our URL
 //if not we can interpolate by `${id}` or if we want the user's input in this case based on how we are targeting the user's input 
 //we can say `${input}` or ${input.value}`
 //This is one way to customize our fetch request
-        // fetch(`http://localhost:3000/movies/${input}`)
+        fetch(`http://localhost:3000/movies/${input}`)
         .then(r => r.json())
         .then(movies => {
             console.log(movies) //confirms what type of data being sent back from the server ( arr or obj | arr of obj | obj of arr)
