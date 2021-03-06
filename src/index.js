@@ -18,16 +18,14 @@ const init = () => {
         //console.log(input.value)
 
 
-
-
         //setting up our fetch
 
-        fetch('http://localhost:3000/movies')
+        //fetch('http://localhost:3000/movies')
 //Sometimes we only want to fetch one single resources from our server. If we know the id we can pass add it to the end of our URL
 //if not we can interpolate by `${id}` or if we want the user's input in this case based on how we are targeting the user's input 
 //we can say `${input}` or ${input.value}`
 //This is one way to customize our fetch request
-        // fetch(`http://localhost:3000/movies/${input}`)
+        fetch(`http://localhost:3000/movies/${input}`)
         .then(r => r.json())
         .then(movies => {
             console.log(movies) //confirms what type of data being sent back from the server ( arr or obj | arr of obj | obj of arr)
@@ -40,11 +38,11 @@ const init = () => {
 //if these elements are not the only or first on the page we need to get more specific about how we target them 
 //const h4 = document.querySelector('h4')
 //const p = document.querySelector('p')
-const title = document.querySelector('#movieDetails h4')
-const pText = document.querySelector('#movieDetails p')
+        const title = document.querySelector('#movieDetails h4')
+        const pText = document.querySelector('#movieDetails p')
 
-title.textContent = movies.title;
-pText.textContent = movies.summary
+        title.textContent = movies.title;
+        pText.textContent = movies.summary;
         });
 
     });
@@ -58,4 +56,27 @@ document.addEventListener('DOMContentLoaded', init);
  * We want to make sure the JavaScript we write executes when the DOM is fully
 loaded. Any code related to DOM manipulation should either go in `init` or in a
 function called within `init`.
+ */
+
+
+
+/**
+ * Takeaway -
+ * 
+ * init() is passed as an arg to the DOMContentLoad which ensures that the HTML loads before the JS
+ * Grab the form on the HTML and add an e.Listener to it, to trigger something to happen when submit is selected
+ * e.preventDefault() //overrides automatic refresh
+ * STOP AND CONSOLE.LOG(e) to ensure our function is working as expected
+ * I want to target the users input value, and there are 3 way accomplish this
+ * STOP AND CONSOLE.LOG(e) to ensure our function is working as expected
+ * 
+ * Setting up the Fetch
+ * 
+ * STOP AND CONSOLE.LOG(e) to ensure our function is working as expected
+ * Based on what I want, I can customize the url to get an individual resource or the resource as a whole from the the 
+ * In this case I want to access a single resource, and inside the second .then() 
+ * First, I access the DOM and store the elements in JS in the section I want them to be placd on the HTML
+ * and change the innerText or textContent by calling the objName.property 
+ * 
+
  */
