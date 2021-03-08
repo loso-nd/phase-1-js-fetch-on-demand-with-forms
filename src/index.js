@@ -46,9 +46,6 @@ const init = () => {
         });
 
     });
-
-
-
 }
 
 document.addEventListener('DOMContentLoaded', init);
@@ -78,5 +75,4 @@ function called within `init`.
  * First, I access the DOM and store the elements in JS in the section I want them to be placd on the HTML
  * and change the innerText or textContent by calling the objName.property 
  * 
-
  */
